@@ -9,12 +9,13 @@ const DATA = [
         title: '11 September',
         data: [
             {
-                time: '11:30',
+                time: '10:11',
                 service: 'service1',
                 active: true,
                 user: {
                     fullName: 'Tim Roth',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+                    avatar: 'https://www.w3schools.com/howto/img_avatar.png',
+                    phone: '+777777777'
                 }
             },
             {
@@ -22,7 +23,8 @@ const DATA = [
                 service: 'service2',
                 user: {
                     fullName: 'Mike Duh',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+                    avatar: 'https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png',
+                    phone: '+7666666666'
                 }
             }
         ]
@@ -31,72 +33,32 @@ const DATA = [
         title: '14 September',
         data: [
             {
-                time: '11:30',
+                time: '12:30',
                 service: 'service1',
                 user: {
-                    fullName: 'Tim Roth',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+                    fullName: 'Anabel Boom',
+                    avatar: 'https://i7.pngguru.com/preview/555/703/598/computer-icons-avatar-woman-user-avatar.jpg',
+                    phone: '+71111111'
                 }
             },
             {
-                time: '11:33',
+                time: '12:33',
                 service: 'service2',
                 user: {
-                    fullName: 'Mike Duh',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
-                }
-            }
-        ]
-    },
-    {
-        title: '15 September',
-        data: [
-            {
-                time: '11:30',
-                service: 'service1',
-                user: {
-                    fullName: 'Tim Roth',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
-                }
-            },
-            {
-                time: '11:33',
-                service: 'service2',
-                user: {
-                    fullName: 'Mike Duh',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
-                }
-            }
-        ]
-    },
-    {
-        title: '16 September',
-        data: [
-            {
-                time: '11:30',
-                service: 'service1',
-                user: {
-                    fullName: 'Tim Roth',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
-                }
-            },
-            {
-                time: '11:33',
-                service: 'service2',
-                user: {
-                    fullName: 'Mike Duh',
-                    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+                    fullName: 'Harry Potter',
+                    avatar: 'https://cdn4.iconfinder.com/data/icons/user-avatar-flat-icons/512/User_Avatar-04-512.png',
+                    phone: '+7222222222'
                 }
             }
         ]
     }]
-export default function HomeScreen({ navigation }) {
+const HomeScreen = ({ navigation }) => {
     return (
         <Container>
             <SectionListContainer
                 sections={DATA}
                 keyExtractor={(item, index) => index}
-                renderItem={({ item }) => <Appointment navigate={navigation.navigate} {...item} />}
+                renderItem={({ item }) => <Appointment navigate={navigation.navigate} item={item} />}
                 renderSectionHeader={({ section: { title } }) => (
                     <SectionTitle >{title}</SectionTitle>
                 )}
@@ -126,3 +88,5 @@ const PlusButton = styled.TouchableOpacity`
 const Container = styled.View`
 flex: 1;
 `;
+
+export default HomeScreen

@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
+import { GrayText } from '../components'
 import styled from 'styled-components/native';
 
-const Appointment = ({ user, service, active, time, navigate }) => {
+const Appointment = ({ item, navigate }) => {
+    const { user, service, active, time } = item
     return (
-        <GroupItem onPress={() => navigate('CardScreen')}>
+        <GroupItem onPress={() => navigate('CardScreen', item)}>
             <Avatar source={{ uri: user.avatar }} />
             <View style={{ flex: 1 }}>
                 <FullName>{user.fullName}</FullName>
@@ -23,11 +25,6 @@ Appointment.defaultProps = {
 const FullName = styled.Text`
 font-weight:600;
 font-size:16px;
-`;
-
-const GrayText = styled.Text`
-font-size:16px;
-color:gray;
 `;
 
 const GroupDate = styled.Text`
