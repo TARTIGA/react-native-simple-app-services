@@ -30,7 +30,6 @@ const CardScreen = ({ route, navigation }) => {
                     <ServiceRow>
                         <Foundation name="clipboard-notes" size={30} color="gray" />
                         <ServiceCardLabel>
-                            ServiceName:
                             <Text style={{ fontWeight: '600' }}>{service.name}</Text>
                         </ServiceCardLabel>
                     </ServiceRow>

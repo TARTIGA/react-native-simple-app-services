@@ -12,7 +12,9 @@ const Appointment = ({ item, navigate }) => {
                 <FullName>{user.fullName}</FullName>
                 <GrayText>{service.name}</GrayText>
             </View>
-            <GroupDate active={active}>{time}</GroupDate>
+            <GroupDate active={active}>
+                <GroupDateText active={active}>{time}</GroupDateText>
+            </GroupDate>
         </GroupItem>
     );
 };
@@ -27,16 +29,24 @@ font-weight:600;
 font-size:16px;
 `;
 
-const GroupDate = styled.Text`
+const GroupDate = styled.View`
 background:${props => (props.active ? '#2A86FF' : '#e9f6ff')};
-color:${props => (props.active ? '#fff' : '#4294ff')};
-border-radius:18px;
+border-radius:30px;
 font-weight:600;
 font-size:14px;
-width:70px;
+width:100px;
 height:32px;
 text-align:center;
 line-height:28px;
+align-items:center;
+justify-content:center;
+`;
+
+const GroupDateText = styled.Text`
+color:${props => (props.active ? '#fff' : '#2A86FF')};
+font-weight:600;
+font-size:14px;
+text-align:center;
 `;
 
 const GroupItem = styled.TouchableOpacity`
