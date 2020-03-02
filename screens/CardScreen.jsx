@@ -1,17 +1,17 @@
 import React from 'react'
 import { Text, View } from 'react-native';
-import { GrayText, Button } from '../components'
+import { GrayText, Button, ServiceBlock } from '../components'
 import styled from 'styled-components/native';
 import { Foundation, Ionicons } from '@expo/vector-icons';
 
 
 const CardScreen = ({ route, navigation }) => {
-    const { user, name, cost, time, date } = route.params;
+    const { fullName, phone, services } = route.params;
     return (
         <Wrapper>
             <MainInfo>
-                <ClientFullName>{user.fullName}</ClientFullName>
-                <GrayText>{user.phone}</GrayText>
+                <ClientFullName>{fullName}</ClientFullName>
+                <GrayText>{phone}</GrayText>
                 <ButtonRow >
                     <Button width="80%">Additional Info</Button>
                     <Button bgColor="#84D269" width="45px">
@@ -35,25 +35,25 @@ const CardScreen = ({ route, navigation }) => {
                     <ServiceRow>
                         <Foundation name="clipboard-notes" size={30} color="gray" />
                         <ServiceCardLabel>
-                            <Text style={{ fontWeight: '600' }}>{name}</Text>
+                            <Text style={{ fontWeight: '600' }}> {services.name}</Text>
                         </ServiceCardLabel>
                     </ServiceRow>
                     <ServiceRow>
                         <Foundation name="calendar" size={30} color="gray" />
                         <ServiceCardLabel>
-                            {date}
+                            {services.date}
                         </ServiceCardLabel>
                     </ServiceRow>
                     <ServiceRow>
                         <Ionicons name="md-time" size={24} color="gray" />
                         <ServiceCardLabel>
-                            {time}
+                            {services.time}
                         </ServiceCardLabel>
                     </ServiceRow>
                     <ServiceRow>
                         <Foundation name="dollar" size={30} color="gray" />
                         <ServicePrice>
-                            {cost}
+                            {services.cost}
                         </ServicePrice>
                     </ServiceRow>
                 </ServiceCard>
