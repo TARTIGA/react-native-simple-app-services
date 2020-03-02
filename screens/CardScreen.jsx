@@ -22,10 +22,15 @@ const CardScreen = ({ route, navigation }) => {
             <DetailsInfo>
                 <DetailsTitle>Details</DetailsTitle>
                 <ServiceCard style={{
-                    shadowOpacity: 0.2,
-                    shadowRadius: 3,
-                    shadowColor: '#000',
-                    shadowOffset: { height: 1, width: 0 },
+                    shadowColor: "#000",
+                    shadowOffset: {
+                        width: 0,
+                        height: 2,
+                    },
+                    shadowOpacity: 0.25,
+                    shadowRadius: 3.84,
+
+                    elevation: 5,
                 }} >
                     <ServiceRow>
                         <Foundation name="clipboard-notes" size={30} color="gray" />
@@ -65,7 +70,7 @@ const MainInfo = styled.View`
     flex:0.3;
 `;
 const DetailsInfo = styled.View`
-flex:1;
+    flex:0.7;
 `;
 
 const ClientFullName = styled.Text`

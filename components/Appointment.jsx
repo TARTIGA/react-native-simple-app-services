@@ -32,8 +32,6 @@ font-size:16px;
 const GroupDate = styled.View`
 background:${props => (props.active ? '#2A86FF' : '#e9f6ff')};
 border-radius:30px;
-font-weight:600;
-font-size:14px;
 width:100px;
 height:32px;
 text-align:center;
@@ -45,8 +43,7 @@ justify-content:center;
 const GroupDateText = styled.Text`
 color:${props => (props.active ? '#fff' : '#2A86FF')};
 font-weight:600;
-font-size:14px;
-text-align:center;
+font-size:16px;
 `;
 
 const GroupItem = styled.TouchableOpacity`
