@@ -20,7 +20,7 @@ function App() {
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
           title: 'HomeScreen',
         }} />
-        <Stack.Screen name="CardScreen" component={CardScreen} options={{ title: 'Card', }} />
+        <Stack.Screen name="CardScreen" component={CardScreen} options={{ title: 'Card' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

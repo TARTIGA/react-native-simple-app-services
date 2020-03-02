@@ -10,7 +10,7 @@ const Appointment = ({ item, navigate }) => {
             <Avatar source={{ uri: user.avatar }} />
             <View style={{ flex: 1 }}>
                 <FullName>{user.fullName}</FullName>
-                <GrayText>{service}</GrayText>
+                <GrayText>{service.name}</GrayText>
             </View>
             <GroupDate active={active}>{time}</GroupDate>
         </GroupItem>
