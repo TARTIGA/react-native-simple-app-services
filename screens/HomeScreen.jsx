@@ -4,16 +4,18 @@ import { View, Text, SectionList, Button } from 'react-native'
 import { Appointment, SectionTitle } from '../components'
 import { Ionicons } from '@expo/vector-icons'
 import axios from 'axios'
-import { DATA } from '../api'
+import DATA from '../api'
 
 const HomeScreen = ({ navigation }) => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
 
     useEffect(() => {
-        const API = "https://jsonplaceholder.typicode.com/posts";
-        axios.get(API).then(({ data }) => {
-            setData(DATA);
-        });
+        // FOR BACKEND 
+        // const API = "https://trycode.pw/c/3QVP0.json";
+        // axios.get(API).then(({data}) => {
+        //     setData(data);
+        // });
+        setData(DATA);
     }, []);
     return (
         <Container>

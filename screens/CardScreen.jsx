@@ -6,7 +6,7 @@ import { Foundation, Ionicons } from '@expo/vector-icons';
 
 
 const CardScreen = ({ route, navigation }) => {
-    const { user, service, time, date } = route.params;
+    const { user, name, cost, time, date } = route.params;
     return (
         <Wrapper>
             <MainInfo>
@@ -35,7 +35,7 @@ const CardScreen = ({ route, navigation }) => {
                     <ServiceRow>
                         <Foundation name="clipboard-notes" size={30} color="gray" />
                         <ServiceCardLabel>
-                            <Text style={{ fontWeight: '600' }}>{service.name}</Text>
+                            <Text style={{ fontWeight: '600' }}>{name}</Text>
                         </ServiceCardLabel>
                     </ServiceRow>
                     <ServiceRow>
@@ -53,7 +53,7 @@ const CardScreen = ({ route, navigation }) => {
                     <ServiceRow>
                         <Foundation name="dollar" size={30} color="gray" />
                         <ServicePrice>
-                            {service.price}
+                            {cost}
                         </ServicePrice>
                     </ServiceRow>
                 </ServiceCard>

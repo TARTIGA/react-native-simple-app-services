@@ -4,16 +4,16 @@ import { GrayText } from '../components'
 import styled from 'styled-components/native';
 
 const Appointment = ({ item, navigate }) => {
-    const { user, service, active, time } = item
+    const { user, isActive, time, name } = item
     return (
         <GroupItem onPress={() => navigate('CardScreen', item)}>
             <Avatar source={{ uri: user.avatar }} />
             <View style={{ flex: 1 }}>
                 <FullName>{user.fullName}</FullName>
-                <GrayText>{service.name}</GrayText>
+                <GrayText>{name}</GrayText>
             </View>
-            <GroupDate active={active}>
-                <GroupDateText active={active}>{time}</GroupDateText>
+            <GroupDate active={isActive}>
+                <GroupDateText active={isActive}>{time}</GroupDateText>
             </GroupDate>
         </GroupItem>
     );
