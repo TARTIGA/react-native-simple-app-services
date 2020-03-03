@@ -1,8 +1,7 @@
 import React from 'react'
-import { Text, View } from 'react-native';
 import { GrayText, Button, ServiceBlock } from '../components'
 import styled from 'styled-components/native';
-import { Foundation, Ionicons } from '@expo/vector-icons';
+import { Foundation } from '@expo/vector-icons';
 
 const CardScreen = ({ route, navigation }) => {
     const { fullName, phone, services } = route.params;
@@ -13,7 +12,7 @@ const CardScreen = ({ route, navigation }) => {
                 <GrayText>{phone}</GrayText>
                 <ButtonRow >
                     <Button width="80%" navigation={navigation} screenName={'AdditionalInfo'}>Additional Info</Button>
-                    <Button bgColor="#84D269" width="45px" navigation={navigation} screenName={'ModalScreen'}>
+                    <Button bgColor="#84D269" width="45px" navigation={navigation} screenName={'AdditionalInfo'}>
                         <Foundation name="telephone" size={24} color="#fff" />
                     </Button>
                 </ButtonRow>

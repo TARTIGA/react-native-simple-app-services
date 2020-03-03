@@ -13,7 +13,9 @@ const Button = ({ children, bgColor, width, navigation, screenName }) => {
 }
 Button.defaultProps = {
     bgColor: '#2A86FF',
-    width: '100%'
+    width: '100%',
+    navigation: {},
+    screenName: ''
 }
 
 const ButtonContainer = styled.View`
