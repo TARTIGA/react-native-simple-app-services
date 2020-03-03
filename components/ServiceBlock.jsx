@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native';
+import { Foundation, Ionicons } from '@expo/vector-icons';
 
-const ServiceBlock = ({ date, time, cost }) => {
+const ServiceBlock = ({ services }) => {
+    const { date, time, cost, name } = services;
     return (
         <ServiceCard style={{
             shadowColor: "#000",
@@ -16,9 +18,9 @@ const ServiceBlock = ({ date, time, cost }) => {
         }} >
             <ServiceRow>
                 <Foundation name="clipboard-notes" size={30} color="gray" />
-                {/* <ServiceCardLabel>
-                    <Text style={{ fontWeight: '600' }}>{fullName}</Text>
-                </ServiceCardLabel> */}
+                <ServiceCardLabel>
+                    {name}
+                </ServiceCardLabel>
             </ServiceRow>
             <ServiceRow>
                 <Foundation name="calendar" size={30} color="gray" />

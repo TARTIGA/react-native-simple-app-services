@@ -4,7 +4,6 @@ import { GrayText, Button, ServiceBlock } from '../components'
 import styled from 'styled-components/native';
 import { Foundation, Ionicons } from '@expo/vector-icons';
 
-
 const CardScreen = ({ route, navigation }) => {
     const { fullName, phone, services } = route.params;
     return (
@@ -13,7 +12,7 @@ const CardScreen = ({ route, navigation }) => {
                 <ClientFullName>{fullName}</ClientFullName>
                 <GrayText>{phone}</GrayText>
                 <ButtonRow >
-                    <Button width="80%">Additional Info</Button>
+                    <Button width="80%" onPress={() => navigation.navigate('AdditionalInfoScreen')} > Additional Info</Button>
                     <Button bgColor="#84D269" width="45px">
                         <Foundation name="telephone" size={24} color="#fff" />
                     </Button>
@@ -21,42 +20,7 @@ const CardScreen = ({ route, navigation }) => {
             </MainInfo>
             <DetailsInfo>
                 <DetailsTitle>Details</DetailsTitle>
-                <ServiceCard style={{
-                    shadowColor: "#000",
-                    shadowOffset: {
-                        width: 0,
-                        height: 2,
-                    },
-                    shadowOpacity: 0.25,
-                    shadowRadius: 3.84,
-
-                    elevation: 5,
-                }} >
-                    <ServiceRow>
-                        <Foundation name="clipboard-notes" size={30} color="gray" />
-                        <ServiceCardLabel>
-                            <Text style={{ fontWeight: '600' }}> {services.name}</Text>
-                        </ServiceCardLabel>
-                    </ServiceRow>
-                    <ServiceRow>
-                        <Foundation name="calendar" size={30} color="gray" />
-                        <ServiceCardLabel>
-                            {services.date}
-                        </ServiceCardLabel>
-                    </ServiceRow>
-                    <ServiceRow>
-                        <Ionicons name="md-time" size={24} color="gray" />
-                        <ServiceCardLabel>
-                            {services.time}
-                        </ServiceCardLabel>
-                    </ServiceRow>
-                    <ServiceRow>
-                        <Foundation name="dollar" size={30} color="gray" />
-                        <ServicePrice>
-                            {services.cost}
-                        </ServicePrice>
-                    </ServiceRow>
-                </ServiceCard>
+                <ServiceBlock services={services} />
             </DetailsInfo>
         </Wrapper>
     );
@@ -85,25 +49,25 @@ const DetailsTitle = styled(ClientFullName)`
     line-height:20px;
 `;
 
-const ServiceCard = styled.View`
-background:#fff;
-padding:10px;
-`;
+// const ServiceCard = styled.View`
+// background:#fff;
+// padding:10px;
+// `;
 
-const ServiceRow = styled.View`
-flex-direction:row;
-align-items:center;
-`;
+// const ServiceRow = styled.View`
+// flex-direction:row;
+// align-items:center;
+// `;
 
-const ServiceCardLabel = styled.Text`
-font-size:16px;
-margin-left:10px;
-`;
+// const ServiceCardLabel = styled.Text`
+// font-size:16px;
+// margin-left:10px;
+// `;
 
-const ServicePrice = styled(ServiceCardLabel)`
-font-size:20px;
-font-weight:700;
-`;
+// const ServicePrice = styled(ServiceCardLabel)`
+// font-size:20px;
+// font-weight:700;
+// `;
 
 
 const ButtonRow = styled.View`
