@@ -11,8 +11,8 @@ const CardScreen = ({ route, navigation }) => {
                 <ClientFullName>{fullName}</ClientFullName>
                 <GrayText>{phone}</GrayText>
                 <ButtonRow >
-                    <Button width="80%" navigation={navigation} screenName={'AdditionalInfo'}>Additional Info</Button>
-                    <Button bgColor="#84D269" width="45px" navigation={navigation} screenName={'AdditionalInfo'}>
+                    <Button width="80%" navigation={navigation} screenName={'AdditionalInfo'} params={{ title: 'Additional params' }}>Additional Info</Button>
+                    <Button bgColor="#84D269" width="45px" >
                         <Foundation name="telephone" size={24} color="#fff" />
                     </Button>
                 </ButtonRow>
@@ -21,7 +21,7 @@ const CardScreen = ({ route, navigation }) => {
                 <DetailsTitle>Details</DetailsTitle>
                 <ServiceBlock services={services} />
             </DetailsInfo>
-        </Wrapper>
+        </Wrapper >
     );
 }
 const Wrapper = styled.View`

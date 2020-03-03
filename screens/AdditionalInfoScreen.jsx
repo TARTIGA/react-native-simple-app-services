@@ -5,10 +5,10 @@ import { Foundation, Ionicons } from '@expo/vector-icons';
 
 
 const AdditionalInfoScreen = ({ route, navigation }) => {
-    // const { fullName, phone, services } = route.params;
+    const { title } = route.params;
     return (
         <Wrapper>
-            <Text>AdditionalInfoScreen</Text>
+            <Text>{title}</Text>
         </Wrapper>
     );
 }

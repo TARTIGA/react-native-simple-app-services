@@ -2,10 +2,10 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 
-const Button = ({ children, bgColor, width, navigation, screenName }) => {
+const Button = ({ children, bgColor, width, navigation, screenName, params }) => {
     return (
         <ButtonContainer bgColor={bgColor} width={width} >
-            <ButtonInside onPress={() => navigation.navigate(screenName)}>
+            <ButtonInside onPress={() => navigation.push(screenName, params)} disabled={!screenName}>
                 <ButtonText>{children}</ButtonText>
             </ButtonInside>
         </ButtonContainer>
@@ -14,8 +14,9 @@ const Button = ({ children, bgColor, width, navigation, screenName }) => {
 Button.defaultProps = {
     bgColor: '#2A86FF',
     width: '100%',
-    navigation: {},
-    screenName: ''
+    navigation: null,
+    screenName: null,
+    params: null
 }
 
 const ButtonContainer = styled.View`

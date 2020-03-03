@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
-const DrawerStack = createDrawerNavigator();
 const RootStack = createDrawerNavigator();
 
 const MainStackScreen = () => {
@@ -33,10 +32,10 @@ const MainStackScreen = () => {
 function App() {
   return (
     <NavigationContainer>
-      <RootStack.Navigator headerMode="none" initialRouteName="Home" drawerPosition="right">
+      <RootStack.Navigator headerMode="none" initialRouteName="Home" drawerPosition="right" >
         <RootStack.Screen name="Home" component={MainStackScreen} />
-        <RootStack.Screen name="Settings" component={SettingsScreen} />
-        <RootStack.Screen name="Notifications" component={NotificationsScreen} />
+        <RootStack.Screen name="Settings" component={SettingsScreen} options={{ title: 'SettingsScreen' }} />
+        <RootStack.Screen name="Notifications" component={NotificationsScreen} options={{ title: 'NotificationsScreen' }} />
       </RootStack.Navigator>
     </NavigationContainer>
   );
