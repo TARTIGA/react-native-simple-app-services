@@ -1,5 +1,6 @@
 import React from 'react'
-import { HomeScreen, CardScreen, AdditionalInfoScreen, NotificationsScreen } from './screens'
+import { HomeScreen, CardScreen, AdditionalInfoScreen } from './screens'
+import { NotificationsScreen, SettingsScreen } from './screens'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -28,11 +29,11 @@ function App() {
           fontWeight: 'bold',
         },
       }}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
+        <Stack.Screen name="Home" component={HomeScreen} options={{
           title: 'HomeScreen',
         }} />
-        <Stack.Screen name="CardScreen" component={CardScreen} options={{ title: 'Card' }} />
-        <Stack.Screen name="AdditionalInfoScreen" component={AdditionalInfoScreen} options={{ title: 'Information' }} />
+        <Stack.Screen name="Card" component={CardScreen} options={{ title: 'Card' }} />
+        <Stack.Screen name="AdditionalInfo" component={AdditionalInfoScreen} options={{ title: 'Information' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

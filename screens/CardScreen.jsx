@@ -12,8 +12,8 @@ const CardScreen = ({ route, navigation }) => {
                 <ClientFullName>{fullName}</ClientFullName>
                 <GrayText>{phone}</GrayText>
                 <ButtonRow >
-                    <Button width="80%" onPress={() => navigation.navigate('AdditionalInfoScreen')} > Additional Info</Button>
-                    <Button bgColor="#84D269" width="45px">
+                    <Button width="80%" navigation={navigation} screenName={'AdditionalInfo'}>Additional Info</Button>
+                    <Button bgColor="#84D269" width="45px" navigation={navigation} screenName={'ModalScreen'}>
                         <Foundation name="telephone" size={24} color="#fff" />
                     </Button>
                 </ButtonRow>

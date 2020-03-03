@@ -6,7 +6,7 @@ import styled from 'styled-components/native';
 const Appointment = ({ item, navigate }) => {
     const { avatar, fullName, phone, services } = item
     return (
-        <GroupItem onPress={() => navigate('CardScreen', item)}>
+        <GroupItem onPress={() => navigate('Card', item)}>
             <Avatar source={{ uri: avatar }} />
             <View style={{ flex: 1 }}>
                 <FullName>{fullName}</FullName>
