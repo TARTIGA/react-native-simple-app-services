@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Blank Template",
-    "slug": "dental-app",
+    "name": "Simple Service App",
+    "slug": "service-app",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
